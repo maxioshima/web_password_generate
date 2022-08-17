@@ -1,7 +1,12 @@
 import React, { useCallback, useState } from "react";
+import styled from "styled-components";
 import generator from "../generator";
 import './flow.css' 
 import Options from "./Options";
+
+const Title = styled.h1 `
+    color: ${ props => props.main ? 'black' : 'red'};
+`
 
 export default function WorkFlow() {
     const [password, setPassword] = useState('Скоро здесь будет пароль)');
@@ -12,7 +17,9 @@ export default function WorkFlow() {
     return (
         <div className="generator_block">
             <div className="header">
-                <h2 className="title">Сгенерируем пароль?</h2>
+                <Title main>
+                    Сгенерируем пароль?
+                </Title>
             </div>
             <div className="body">
                 <div className="generated_password" id='password_block'>
